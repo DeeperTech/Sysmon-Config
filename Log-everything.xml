@@ -1,0 +1,68 @@
+<!-- Basic log everything configuration file, many cause high system load -->
+
+<Sysmon schemaversion="3.30">
+	<HashAlgorithms>md5,sha256</HashAlgorithms>
+	<EventFiltering>
+
+	<!--EVENT ID 1 : PROCESS CREATION-->
+		<ProcessCreate onmatch="exclude">
+		</ProcessCreate>
+
+	<!--EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM-->
+		<FileCreateTime onmatch="exclude">
+		</FileCreateTime>
+
+	<!--EVENT ID 3 : NETWORK CONNECTION INITIATED-->
+		<NetworkConnect onmatch="exclude">
+		</NetworkConnect>
+
+	<!--EVENT ID 4 : Cannot be filtered-->
+		
+	<!--EVENT ID 5 : PROCESS ENDED-->
+		<ProcessTerminate onmatch="exclude">
+		</ProcessTerminate>
+
+	<!--EVENT ID 6 : DRIVER LOADED INTO KERNEL-->
+		<DriverLoad onmatch="exclude">
+		</DriverLoad>
+
+	<!--EVENT ID 7 : DLL LOADED BY PROCESS-->
+		<ImageLoad onmatch="exclude">
+		</ImageLoad>
+
+	<!--EVENT ID 8 : REMOTE THREAD CREATED-->
+		<CreateRemoteThread onmatch="exclude">
+		</CreateRemoteThread>
+
+	<!--EVENT ID 9 : RAW DISK ACCESS-->
+		<RawAccessRead onmatch="exclude">
+		</RawAccessRead>
+
+	<!--EVENT ID 10 : INTER-PROCESS ACCESS-->
+		<ProcessAccess onmatch="exclude">
+		</ProcessAccess>
+
+	<!--EVENT ID 11 : FILE CREATED-->
+		<FileCreate onmatch="exclude">
+		</FileCreate>
+
+	<!--EVENT ID 12 / 13 / 14 : REGISTRY MODIFICATION-->
+		<RegistryEvent onmatch="exclude">
+		</RegistryEvent>
+
+	<!--EVENT ID 15 : ALTERNATE DATA STREAM CREATED-->
+		<FileCreateStreamHash onmatch="exclude">
+		</FileCreateStreamHash>
+
+	<!--EVENT ID 16 : Cannot be filtered.-->
+
+	<!--EVENT ID 17 / 18 : PIPE CREATED / PIPE CONNECTED-->
+		<PipeEvent onmatch="exclude">
+		</PipeEvent>
+
+	<!--EVENT ID 19 / 20 / 21-->
+		<WmiEvent onmatch="exclude">
+		</WmiEvent>		
+		
+	</EventFiltering>
+</Sysmon>

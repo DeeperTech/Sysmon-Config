@@ -1,1 +1,1 @@
-Sysmon Configuration file
+Sysmon Configuration Files

@@ -1,68 +1,54 @@
 <!-- Basic log everything configuration file, many cause high system load -->
 
-<Sysmon schemaversion="3.30">
+<Sysmon schemaversion="3.40">
 	<HashAlgorithms>md5,sha256</HashAlgorithms>
 	<EventFiltering>
 
 	<!--EVENT ID 1 : PROCESS CREATION-->
-		<ProcessCreate onmatch="exclude">
-		</ProcessCreate>
+		<ProcessCreate onmatch="exclude"/>
 
 	<!--EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM-->
-		<FileCreateTime onmatch="exclude">
-		</FileCreateTime>
+		<FileCreateTime onmatch="exclude"/>
 
 	<!--EVENT ID 3 : NETWORK CONNECTION INITIATED-->
-		<NetworkConnect onmatch="exclude">
-		</NetworkConnect>
+		<NetworkConnect onmatch="exclude"/>
 
 	<!--EVENT ID 4 : Cannot be filtered-->
 		
 	<!--EVENT ID 5 : PROCESS ENDED-->
-		<ProcessTerminate onmatch="exclude">
-		</ProcessTerminate>
+		<ProcessTerminate onmatch="exclude"/>
 
 	<!--EVENT ID 6 : DRIVER LOADED INTO KERNEL-->
-		<DriverLoad onmatch="exclude">
-		</DriverLoad>
+		<DriverLoad onmatch="exclude"/>
 
 	<!--EVENT ID 7 : DLL LOADED BY PROCESS-->
-		<ImageLoad onmatch="exclude">
-		</ImageLoad>
+		<ImageLoad onmatch="exclude"/>
 
 	<!--EVENT ID 8 : REMOTE THREAD CREATED-->
-		<CreateRemoteThread onmatch="exclude">
-		</CreateRemoteThread>
+		<CreateRemoteThread onmatch="exclude"/>
 
 	<!--EVENT ID 9 : RAW DISK ACCESS-->
-		<RawAccessRead onmatch="exclude">
-		</RawAccessRead>
+		<RawAccessRead onmatch="exclude"/>
 
 	<!--EVENT ID 10 : INTER-PROCESS ACCESS-->
-		<ProcessAccess onmatch="exclude">
-		</ProcessAccess>
+		<ProcessAccess onmatch="exclude"/>
 
 	<!--EVENT ID 11 : FILE CREATED-->
-		<FileCreate onmatch="exclude">
-		</FileCreate>
+		<FileCreate onmatch="exclude"/>
 
 	<!--EVENT ID 12 / 13 / 14 : REGISTRY MODIFICATION-->
-		<RegistryEvent onmatch="exclude">
-		</RegistryEvent>
+		<RegistryEvent onmatch="exclude"/>
 
 	<!--EVENT ID 15 : ALTERNATE DATA STREAM CREATED-->
-		<FileCreateStreamHash onmatch="exclude">
-		</FileCreateStreamHash>
+		<FileCreateStreamHash onmatch="exclude"/>
 
 	<!--EVENT ID 16 : Cannot be filtered.-->
 
 	<!--EVENT ID 17 / 18 : PIPE CREATED / PIPE CONNECTED-->
-		<PipeEvent onmatch="exclude">
-		</PipeEvent>
+		<PipeEvent onmatch="exclude"/>
 
 	<!--EVENT ID 19 / 20 / 21-->
-		<WmiEvent onmatch="exclude">
-		</WmiEvent>		
+		<WmiEvent onmatch="exclude"/>	
 		
 	</EventFiltering>
 </Sysmon>
